@@ -15,7 +15,9 @@ import {
 } from "@chakra-ui/react";
 import { Element } from "react-scroll";
 
+
 function Projects() {
+  const SPOTIFY_URL = "https://spotify-dashboard.janmatzek.com/"
   return (
     <>
       <Element name="projects-section"></Element>
@@ -43,7 +45,7 @@ function Projects() {
               >
                 A web application showing my{" "}
                 <Link
-                  href="https://spotify-front-end-one.vercel.app"
+                  href={SPOTIFY_URL}
                   target="blank"
                   rel="noopener noreferrer"
                 >
@@ -62,7 +64,7 @@ function Projects() {
               >
                 <Box marginBottom={["2vh", 0]}>
                   <Link
-                    href="https://spotify-front-end-one.vercel.app"
+                    href={SPOTIFY_URL}
                     target="blank"
                     rel="noopener noreferrer"
                   >
@@ -89,44 +91,21 @@ function Projects() {
                 >
                   <UnorderedList styleType="'- '">
                     <ListItem>
-                      ETL function deployed on AWS Lambda fetching data from
+                      Containerized app fetching data from
                       Spotify API every hour
-                    </ListItem>
-                    <ListItem>
-                      Data is stored in BigQuery with SQL analytical layer on
-                      top of it
                     </ListItem>
                     <ListItem>
                       Frontend created in React using Chakra UI and Chart.js,
                       backend runs on Python FastAPI
                     </ListItem>
                     <ListItem>
-                      Alerts are sent directly to my phone via Telegram
-                    </ListItem>
-                    <ListItem>
-                      Repositories:{" "}
+                      Code:{" "}
                       <Link
-                        href="https://github.com/janmatzek/spotify-backend"
+                        href="https://github.com/janmatzek/spotify-dashboard"
                         target="blank"
                         rel="noopener noreferrer"
                       >
-                        pipeline
-                      </Link>{" "}
-                      |{" "}
-                      <Link
-                        href="https://github.com/janmatzek/sandboxProjects"
-                        target="blank"
-                        rel="noopener noreferrer"
-                      >
-                        backend
-                      </Link>{" "}
-                      |{" "}
-                      <Link
-                        href="https://github.com/janmatzek/spotify-front-end"
-                        target="blank"
-                        rel="noopener noreferrer"
-                      >
-                        frontend
+                        janmatzek/spotify-dashboard
                       </Link>
                     </ListItem>
                   </UnorderedList>
