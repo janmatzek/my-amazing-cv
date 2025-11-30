@@ -12,7 +12,7 @@ import {
 function Contact() {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const MESSAGING_URL = "http://msg.janmatzek.com/contact-form";
+  const MESSAGING_URL = "https://msg.janmatzek.com/contact-form";
 
   const [buttonLoading, setButtonLoading] = useState(false);
 
