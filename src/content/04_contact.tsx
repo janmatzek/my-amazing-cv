@@ -12,16 +12,15 @@ import {
 function Contact() {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const frogEndpoint =
-    "https://zvkbxcw6va.execute-api.us-east-1.amazonaws.com/dev/contact_form";
+  const MESSAGING_URL = "http://msg.janmatzek.com/contact-form";
 
   const [buttonLoading, setButtonLoading] = useState(false);
 
   const [emailValue, setEmailValue] = useState("");
-  const handleEmailChange = (event) => setEmailValue(event.target.value);
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmailValue(event.target.value);
 
   const [messageValue, setMessageValue] = useState("");
-  const handleMessageChange = (event) => setMessageValue(event.target.value);
+  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => setMessageValue(event.target.value);
 
   const [pingMeCaption, setPingMeCaption] = useState("Ping me!");
 
@@ -48,32 +47,39 @@ function Contact() {
     setButtonDisabled(true);
     setButtonLoading(true);
     (async () => {
-      const rawResponse = await fetch(frogEndpoint, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contact_info: emailValue,
-          message: messageValue,
-        }),
-      });
-      const response = await rawResponse.json();
-      if (response.message == "success") {
-        setButtonLoading(false);
-        setButtonDisabled(true);
-        setPingMeCaption("Sent!");
-        setMessageSent(true);
-        setEmailValue("");
-        setMessageValue("Thank you for your message!");
-        setTimeout(() => {
-          setMessageValue("");
+      try {
+        const response = await fetch(MESSAGING_URL, {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: emailValue,
+            message: messageValue,
+          }),
+        });
+        if (response.ok) {
+          setButtonLoading(false);
+          setButtonDisabled(true);
+          setPingMeCaption("Sent!");
+          setMessageSent(true);
+          setEmailValue("");
+          setMessageValue("Thank you for your message!");
+          setTimeout(() => {
+            setMessageValue("");
+            setButtonDisabled(false);
+            setMessageSent(false);
+            setPingMeCaption("Ping me!");
+          }, 5000);
+        } else {
+          setButtonLoading(false);
           setButtonDisabled(false);
-          setMessageSent(false);
-          setPingMeCaption("Ping me!");
-        }, 5000);
-      } else {
+          setPingMeCaption("Try again :(");
+          console.log("Error response:", await response.text());
+        }
+      } catch (error) {
+        console.log("Error sending message:", error);
         setButtonLoading(false);
         setButtonDisabled(false);
         setPingMeCaption("Try again :(");
