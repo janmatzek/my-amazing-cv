@@ -15,9 +15,10 @@ import {
 } from "@chakra-ui/react";
 import { Element } from "react-scroll";
 
-
+// TODO: Projects should be elements creatable form an array of objects
 function Projects() {
   const SPOTIFY_URL = "https://spotify-dashboard.janmatzek.com/"
+  const WEATHER_BOT_URL = "https://weatherbot.janmatzek.com/"
   return (
     <>
       <Element name="projects-section"></Element>
@@ -32,10 +33,83 @@ function Projects() {
         <Tabs isFitted variant="unstyled">
           {" "}
           <TabList mb="1em" borderBottom="2px solid" borderColor="gray.200">
+            <Tab>Weatherbot</Tab>
             <Tab>Spotify Dashboard</Tab>
             <Tab>Image Splitter</Tab>
           </TabList>
           <TabPanels>
+            <TabPanel>
+              <Text
+                className="projectPerex"
+                textAlign={["center"]}
+                marginBottom={["2vh", "4vh"]}
+                fontSize={["14px", "16px"]}
+              >
+                An agentic workflow to provide weather forecast.
+                <Box as="span" display={["none", "inline"]}>
+                  <br />
+                </Box>
+                Small talk about weather... with AI!
+              </Text>
+              <Flex
+                direction={["column", "row"]}
+                justifyContent={"space-evenly"}
+                alignItems="center"
+              >
+                <Box marginBottom={["2vh", 0]}>
+                  <Link
+                    href={WEATHER_BOT_URL}
+                    target="blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Box
+                      filter="none"
+                      transition="transform 0.3s ease-in-out"
+                      _hover={{
+                        transform: "scale(1.05)",
+                        filter: "drop-shadow(0 0 5px white)",
+                      }}
+                    >
+                      <Image
+                        src="./assets/weatherbot.png"
+                        maxWidth="30vw"
+                      ></Image>
+                    </Box>
+                  </Link>
+                </Box>
+                <Flex
+                  width={["100%", "35vw"]}
+                  direction="column"
+                  justifyContent={"center"}
+                  fontSize={["14px", "16px"]}
+                >
+                  <UnorderedList styleType="'- '">
+                    <ListItem>
+                      Chatbot interface to get weather forecast.
+                    </ListItem>
+                    <ListItem>
+                      As default, location and date are parsed from user messages and used to create the forecast.
+                    </ListItem>
+                    <ListItem>
+                      If OpenAI api key is provided, a LLM agent handles user interaction and gets weather info by using tools.
+                    </ListItem>
+                    <ListItem>
+                      Written in TypeScript (React + Node.js)
+                    </ListItem>
+                    <ListItem>
+                      Code:{" "}
+                      <Link
+                        href="https://github.com/janmatzek/weather-bot/"
+                        target="blank"
+                        rel="noopener noreferrer"
+                      >
+                        janmatzek/weather-bot
+                      </Link>
+                    </ListItem>
+                  </UnorderedList>
+                </Flex>
+              </Flex>
+            </TabPanel>
             <TabPanel>
               <Text
                 className="projectPerex"
