@@ -24,12 +24,12 @@ function AboutMe() {
           fontSize={["14px", "16px"]}
           paddingLeft="10px"
         >
-          Aspiring data engineer & developer.
+          SW engineer, builder, problem solver.
           <br></br>
           Have a look at my CV or my projects below!
           <br></br>
           <br></br>
-          <i>&#60;Python | SQL | NoSQL | GCP | AWS | Linux/&#62;</i>
+          <i>&#60;Python | TypeScript | Agentic | AWS | Linux  /&#62;</i>
         </Text>
         <Flex
           direction={["column", "row"]}

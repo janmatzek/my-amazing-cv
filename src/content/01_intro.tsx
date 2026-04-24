@@ -32,7 +32,7 @@ function IntroductionPage() {
         padding={["4vw", "8vw"]}
       >
         <Heading color="white" css={useBlurInAnimation("1s")}>
-          Hello world.
+          Hello world
         </Heading>
       </Flex>
       <Flex
@@ -46,9 +46,11 @@ function IntroductionPage() {
           css={useBlurInAnimation("1.5s")}
           fontSize={["14px", "16px"]}
         >
-          My name is Jan. I write code,
+          My name is Jan.
           <br />
-          play music and make charts.
+          I write code, play music,
+          <br />
+          and tell agents to do stuff.
         </Text>
       </Flex>
     </>

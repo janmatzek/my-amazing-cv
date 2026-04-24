@@ -16,9 +16,11 @@ import {
 import { Element } from "react-scroll";
 
 // TODO: Projects should be elements creatable form an array of objects
+const WEATHERBOT_GIT_URL = "https://github.com/janmatzek/weather-bot/"
+const SPOTIFY_GIT_URL = "https://github.com/janmatzek/spotify-dashboard"
+const SPLITTER_GIT_URL = "https://github.com/janmatzek/image-splitter-web-app"
+
 function Projects() {
-  const SPOTIFY_URL = "https://spotify-dashboard.janmatzek.com/"
-  const WEATHER_BOT_URL = "https://weatherbot.janmatzek.com/"
   return (
     <>
       <Element name="projects-section"></Element>
@@ -58,7 +60,7 @@ function Projects() {
               >
                 <Box marginBottom={["2vh", 0]}>
                   <Link
-                    href={WEATHER_BOT_URL}
+                    href={WEATHERBOT_GIT_URL}
                     target="blank"
                     rel="noopener noreferrer"
                   >
@@ -99,7 +101,7 @@ function Projects() {
                     <ListItem>
                       Code:{" "}
                       <Link
-                        href="https://github.com/janmatzek/weather-bot/"
+                        href={WEATHERBOT_GIT_URL}
                         target="blank"
                         rel="noopener noreferrer"
                       >
@@ -117,14 +119,7 @@ function Projects() {
                 marginBottom={["2vh", "4vh"]}
                 fontSize={["14px", "16px"]}
               >
-                A web application showing my{" "}
-                <Link
-                  href={SPOTIFY_URL}
-                  target="blank"
-                  rel="noopener noreferrer"
-                >
-                  Spotify listening stats
-                </Link>
+                A web application showing my Spotify listening stats
                 .{" "}
                 <Box as="span" display={["none", "inline"]}>
                   <br />
@@ -138,7 +133,7 @@ function Projects() {
               >
                 <Box marginBottom={["2vh", 0]}>
                   <Link
-                    href={SPOTIFY_URL}
+                    href={SPOTIFY_GIT_URL}
                     target="blank"
                     rel="noopener noreferrer"
                   >
@@ -175,7 +170,7 @@ function Projects() {
                     <ListItem>
                       Code:{" "}
                       <Link
-                        href="https://github.com/janmatzek/spotify-dashboard"
+                        href={SPOTIFY_GIT_URL}
                         target="blank"
                         rel="noopener noreferrer"
                       >
@@ -203,7 +198,7 @@ function Projects() {
               >
                 <Box marginBottom={["2vh", 0]}>
                   <Link
-                    href="https://image-splitter.janmatzek.com"
+                    href={SPLITTER_GIT_URL}
                     target="blank"
                     rel="noopener noreferrer"
                   >
@@ -239,21 +234,7 @@ function Projects() {
                       common image edits.
                     </ListItem>
                     <ListItem>
-                      <Link
-                        href="https://github.com/janmatzek/image-splitter-web-app"
-                        target="blank"
-                        rel="noopener noreferrer"
-                      >
-                        Frontend
-                      </Link>{" "}
-                      created in React using Chakra UI,{" "}
-                      <Link
-                        href="https://github.com/janmatzek/instagram-image-splitter"
-                        target="blank"
-                        rel="noopener noreferrer"
-                      >
-                        backend
-                      </Link>{" "}
+                      Frontend created in React using Chakra UI, backend 
                       runs on Python FastAPI
                     </ListItem>
                     <ListItem>
@@ -261,15 +242,7 @@ function Projects() {
                     </ListItem>
                     <ListItem>
                       <Link
-                        href="https://image-splitter.janmatzek.com"
-                        target="blank"
-                        rel="noopener noreferrer"
-                      >
-                        Web App
-                      </Link>{" "}
-                      |{" "}
-                      <Link
-                        href="https://github.com/janmatzek/instagram-image-splitter"
+                        href={SPLITTER_GIT_URL}
                         target="blank"
                         rel="noopener noreferrer"
                       >
