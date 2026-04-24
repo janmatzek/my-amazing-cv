@@ -12,7 +12,7 @@ import {
 function Contact() {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const MESSAGING_URL = "https://msg.janmatzek.com/contact-form";
+  const MESSAGING_ROUTE = "/send";
 
   const [buttonLoading, setButtonLoading] = useState(false);
 
@@ -48,7 +48,7 @@ function Contact() {
     setButtonLoading(true);
     (async () => {
       try {
-        const response = await fetch(MESSAGING_URL, {
+        const response = await fetch(MESSAGING_ROUTE, {
           method: "POST",
           headers: {
             "Accept": "application/json",
